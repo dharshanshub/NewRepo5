@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Medicure_Entity.Drug>
+
+@{
+    ViewData["Title"] = "DrugsToBeSuppiled";
+}
+
+<h1>Drugs To Be Suppiled</h1>
+
+
+<table class="table h3">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Required_Qty)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Required_Qty)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+
+            <td>
+                <form asp-action="SupplierDrugsbtn">
+                <input type="hidden" name="Id"  value="@item.Id" hidden class="btn btn-danger" /> |
+                <button type="submit" >Supply Drugs</button>
+                </form>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+     <a class="btn btn-outline-light" asp-controller="Supplier" asp-action="Index" asp-route-id="@ViewBag.Sid">Back</a>
+</div>

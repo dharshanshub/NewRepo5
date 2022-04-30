@@ -1,0 +1,68 @@
+﻿@model Medicure_Entity.Patient
+
+@{
+    ViewData["Title"] = "Index";
+}
+@*   <nav class="navbar navbar-expand-lg navbar-dark bg-primary"  ">
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+  <ol class="breadcrumb col-lg-9 lg">
+    <li class="nav-item">
+        <a asp-controller="Patient" asp-action="BookAppointment" asp-route-id="@Model.Id">Book Appointment</a>
+    </li>
+    <li class="nav-item">
+        <a asp-controller="Patient" asp-action="EditPatient" asp-route-id="@Model.Id">Edit Details</a>
+    </li>
+    <li class="nav-item">
+        <a asp-controller="Patient" asp-action="GetAllDrug" asp-route-id="@Model.Id">View Drugs</a>
+    </li>
+    <li class="nav-item">
+        <a asp-controller="Patient" asp-action="ViewAppointmentHistory" asp-route-id="@Model.Id">View Appointment Historys</a>
+
+    </li>
+  </ol>
+  </div>
+</nav>
+*@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+        <a class="navbar-brand" asp-controller="Patient" asp-action="BookAppointment" asp-route-id="@Model.Id">Book Appointment  /   </a>
+    </li>
+    <li class="nav-item">
+        <a class="navbar-brand" asp-controller="Patient" asp-action="EditPatient" asp-route-id="@Model.Id">Edit Details  /   </a>
+    </li>
+    <li class="nav-item">
+        <a class="navbar-brand" asp-controller="Patient" asp-action="GetAllDrug" asp-route-id="@Model.Id"> View Drugs  /   </a>
+    </li>
+    <li class="nav-item">
+        <a class="navbar-brand" asp-controller="Patient" asp-action="ViewAppointmentHistory" asp-route-id="@Model.Id">View Appointment Historys   /   </a>
+        </li>
+        <li class="nav-item">
+        <a class="navbar-brand" asp-controller="Patient" asp-action="Logout" >Logout</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div>
+
+<h1 class="align-content-lg-center">Welcome</h1>
+
+<div class="align-content-lg-center">
+    <h2>@Model.Name</h2>
+</div>
+@if (TempData["error"] !=null)
+{
+    <div class="alert alert-dismissible alert-danger">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Oh snap!</strong> <a  class="alert-link">@ViewBag.message</a> and try submitting again.
+</div>
+}
+</div>
+

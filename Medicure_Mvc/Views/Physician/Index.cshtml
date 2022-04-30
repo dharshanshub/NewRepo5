@@ -1,0 +1,54 @@
+﻿@model Medicure_Entity.Physician
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@* <nav aria-label="breadcrumb">
+  <ul class="navbar-nav flex-grow-1">
+    <li class="breadcrumb-item">
+        <a asp-controller="Physician" asp-action="ViewAppointments" asp-route-id="@Model.Id">View Your Appointments</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a asp-controller="Physician" asp-action="GetallDrugs" asp-route-id="@Model.Id">Drug</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a asp-controller="Physician" asp-action="AppointmentHistory" asp-route-id="@Model.Id">Appointment History</a>
+    </li>
+  </ul>
+</nav>*@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li >
+        <a class="navbar-brand"asp-controller="Physician" asp-action="ViewAppointments" asp-route-id="@Model.Id">View Your Appointments /   </a>
+    </li>
+    <li >
+        <a class="navbar-brand" asp-controller="Physician" asp-action="GetallDrugs" asp-route-id="@Model.Id">Drug    /   </a>
+    </li>
+    <li >
+        <a class="navbar-brand" asp-controller="Physician" asp-action="AppointmentHistory" asp-route-id="@Model.Id">Appointment History</a>
+    </li>
+    <li class="nav-item">
+        <a class="navbar-brand" asp-controller="Physician" asp-action="Logout" >Logout</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+@if (TempData["error"] !=null)
+{
+    <div class="alert alert-dismissible alert-danger">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Oh snap!</strong> <a  class="alert-link">@ViewBag.message</a> and try submitting again.
+</div>
+}
+<h1>Hello Physician</h1>
+<h2>@Model.Name</h2>
+
