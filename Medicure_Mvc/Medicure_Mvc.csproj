@@ -5,11 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\assets\.vs\VSWorkspaceState.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\.vs\slnx.sqlite" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Medicure_Entity\Medicure_Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\.vs\assets\v17\" />
   </ItemGroup>
 
 </Project>

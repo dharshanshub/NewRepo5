@@ -2,14 +2,13 @@
 
 @{
     ViewData["Title"] = "CreateDrug";
+    Layout = "_Layout2";
 }
 @{
     Random r= new Random();
     int did = r.Next(100,999);
 }
-<h1>Create</h1>
-
-<h4>Drug</h4>
+<div class="drg">
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -49,7 +48,7 @@
 <div>
      <a class="btn btn-outline-light" asp-controller="Supplier" asp-action="Index" asp-route-id="@ViewBag.Id">Back</a>
 </div>
-
+</div>
 
 
 @section Scripts {

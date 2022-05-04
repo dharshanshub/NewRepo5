@@ -2,14 +2,16 @@
 
 @{
     ViewData["Title"] = "GetallDrugs";
+    Layout = "_Layout2";
 }
-
-<h1>Drugs</h1>
+<div class="tab">
+<h1 style = "color:cornflowerblue ;font-weight:bold;"> Drugs </h1>
 
 
 <table class="table h4">
     <thead>
-        <tr>
+        <tr class="bg-primary">
+        
             <th>
                 @Html.DisplayNameFor(model => model.Id)
             </th>
@@ -37,8 +39,10 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+     
+        <tr class="table-primary">
             <td>
+
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
@@ -60,6 +64,7 @@
 }
     </tbody>
 </table>
+</div>
 <div>
     <a class="btn btn-outline-light"  asp-controller="Patient" asp-action="Index" asp-route-id="@ViewBag.Id">Back</a>
 </div>

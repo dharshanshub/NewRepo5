@@ -2,28 +2,10 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "_Layout2";
 }
-@*   <nav class="navbar navbar-expand-lg navbar-dark bg-primary"  ">
-    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-  <ol class="breadcrumb col-lg-9 lg">
-    <li class="nav-item">
-        <a asp-controller="Patient" asp-action="BookAppointment" asp-route-id="@Model.Id">Book Appointment</a>
-    </li>
-    <li class="nav-item">
-        <a asp-controller="Patient" asp-action="EditPatient" asp-route-id="@Model.Id">Edit Details</a>
-    </li>
-    <li class="nav-item">
-        <a asp-controller="Patient" asp-action="GetAllDrug" asp-route-id="@Model.Id">View Drugs</a>
-    </li>
-    <li class="nav-item">
-        <a asp-controller="Patient" asp-action="ViewAppointmentHistory" asp-route-id="@Model.Id">View Appointment Historys</a>
-
-    </li>
-  </ol>
-  </div>
-</nav>
-*@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<body>
+@*<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
 
   
@@ -48,21 +30,104 @@
 
     </div>
   </div>
-</nav>
+</nav>*@
 
-<div>
+    <div>
 
-<h1 class="align-content-lg-center">Welcome</h1>
+        <div class="sect">
 
-<div class="align-content-lg-center">
-    <h2>@Model.Name</h2>
-</div>
-@if (TempData["error"] !=null)
-{
-    <div class="alert alert-dismissible alert-danger">
-  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  <strong>Oh snap!</strong> <a  class="alert-link">@ViewBag.message</a> and try submitting again.
-</div>
-}
-</div>
+        <div class="align-content-lg-center">
+            <h2>@Model.Name</h2>
+        </div>
+
+
+        <section id="feature1" class="aboutt">
+            <div style="border-color:#ff7f50; border-width:10px;" class="container">
+
+                <div class="row justify-content-end">
+
+
+                    <div class="col-lg-6  video-box align-self-baseline position-relative">
+
+
+                    </div>
+
+                    <div class="col-lg-6 pt-3 pt-lg-0 content">
+                        <h3 style="color: #6495ED">Book Appointment</h3>
+                        <p class="fst-italic">
+                            Book your Appointments
+                        </p>
+                        <h5 style="color: #6495ED"><strong>Click here to Book the Appointment</strong></h5>
+                        <a asp-area="Views" asp-controller="Patient" asp-action="BookAppointment" asp-route-id="@Model.Id"><input type="Submit" value="Book Appointment" class="btn1"> </a>
+                        <p>
+
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section id="feature1" class="aboutt">
+            <div style="border-color: #ff7f50; border-width: 10px;" class="container">
+
+                <div class="row justify-content-end">
+
+
+                    <div class="col-lg-6  video-box2 align-self-baseline position-relative">
+
+
+                    </div>
+
+                    <div class="col-lg-6 pt-3 pt-lg-0 content">
+                        <h3 style="color: #6495ED">Appointment History</h3>
+                        <p class="fst-italic">
+                            Check your Appointment History here
+                        </p>
+                        <h5 style="color: #6495ED"><strong>Click here to View your Appointment History</strong></h5>
+                        <a asp-area="Views" asp-controller="Patient" asp-action="ViewAppointmentHistory" asp-route-id="@Model.Id"><input type="Submit" value="Appointment History" class="btn3"> </a>
+    
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section id="feature1" class="aboutt">
+            <div style="border-color: #ff7f50; border-width: 10px;" class="container">
+
+                <div class="row justify-content-end">
+
+
+                    <div class="col-lg-6  video-box1 align-self-baseline position-relative">
+
+
+                    </div>
+
+                    <div class="col-lg-6 pt-3 pt-lg-0 content">
+                        <h3 style="color: #6495ED">Edit Profile</h3>
+                        <p class="fst-italic">
+                            Edit your Details update you name,password.
+                        </p>
+                        <h5 style="color: #6495ED"><strong>Click here to Edit your Profile</strong></h5>
+                        <a asp-area="Views" asp-controller="Patient" asp-action="EditPatient" asp-route-id="@Model.Id"><input type="Submit" value="Edit Profile" class="btn1"> </a>
+                
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        </div>
+       
+
+        @if (TempData["error"] != null)
+        {
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>Oh snap!</strong> <a class="alert-link">@ViewBag.message</a> and try submitting again.
+            </div>
+        }
+    </div>
+</body>
 

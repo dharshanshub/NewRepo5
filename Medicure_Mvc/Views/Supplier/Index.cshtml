@@ -1,41 +1,101 @@
 ﻿@model Medicure_Entity.Supplier
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Index";
+                Layout = "_Layout2"; }
 @*    <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-        <a asp-controller="Supplier" asp-action="DrugsToBeSuppiled" asp-route-id="@Model.SupplierId">Drugs To Be Suppiled</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a asp-controller="Supplier" asp-action="CreateDrug" asp-route-id="@Model.SupplierId">Create Drug</a>
-    </li>
-
-  </ol>
-</nav>*@
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-
-  
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-          <li class="navbar-brand">
-        <a asp-controller="Supplier" asp-action="DrugsToBeSuppiled" asp-route-id="@Model.SupplierId">Drugs To Be Suppiled</a>
-    </li>
-    <li class="navbar-brand">
-        <a asp-controller="Supplier" asp-action="CreateDrug" asp-route-id="@Model.SupplierId">Create Drug</a>
-    </li>
-    <li class="nav-item">
-        <a class="navbar-brand" asp-controller="Supplier" asp-action="Logout" >Logout</a>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-controller="Supplier" asp-action="DrugsToBeSuppiled" asp-route-id="@Model.SupplierId">Drugs To Be Suppiled</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-controller="Supplier" asp-action="CreateDrug" asp-route-id="@Model.SupplierId">Create Drug</a>
         </li>
 
+      </ol>
+    </nav>*@
+@*
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
 
-      </ul>
 
-    </div>
-  </div>
-</nav>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+              <li class="navbar-brand">
+            <a asp-controller="Supplier" asp-action="DrugsToBeSuppiled" asp-route-id="@Model.SupplierId">Drugs To Be Suppiled</a>
+        </li>
+        <li class="navbar-brand">
+            <a asp-controller="Supplier" asp-action="CreateDrug" asp-route-id="@Model.SupplierId">Create Drug</a>
+        </li>
+        <li class="nav-item">
+            <a class="navbar-brand" asp-controller="Supplier" asp-action="Logout" >Logout</a>
+            </li>
+
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>*@
+
 <h1>Index</h1>
 <h2>@Model.Username</h2>
+
+<section id="feature1" class="aboutt">
+    <div style="border-color:#ff7f50; border-width:10px;" class="container">
+
+        <div class="row justify-content-end">
+
+
+            <div class="col-lg-6  video-box6 align-self-baseline position-relative">
+
+
+            </div>
+
+            <div class="col-lg-6 pt-3 pt-lg-0 content">
+                <h3 style="color: #6495ED">Supply Drugs</h3>
+                <p class="fst-italic">
+                    Check Your Drug orders
+                </p>
+                <h5 style="color: #6495ED"><strong>Click here to supply drugs</strong></h5>
+                <a asp-area="Views" asp-controller="Supplier" asp-action="DrugsToBeSuppiled"
+                asp-route-id="@Model.SupplierId"><input type="Submit" value="Drugs to be Supplied" class="btn3"> </a>
+                <p>
+
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="feature1" class="aboutt">
+    <div style="border-color:#ff7f50; border-width:10px;" class="container">
+
+        <div class="row justify-content-end">
+
+
+            <div class="col-lg-6  video-box5 align-self-baseline position-relative">
+
+
+            </div>
+
+            <div class="col-lg-6 pt-3 pt-lg-0 content">
+                <h3 style="color: #6495ED">Create Drug</h3>
+                <p class="fst-italic">
+                   Create new drugs
+                </p>
+                <h5 style="color: #6495ED"><strong>Click here to create the drugs</strong></h5>
+                <a asp-area="Views" asp-controller="Supplier" asp-action="CreateDrug"><input type="Submit" value="Create Drug" class="btn1"> </a>
+                <p>
+
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<section>
+
+</section>

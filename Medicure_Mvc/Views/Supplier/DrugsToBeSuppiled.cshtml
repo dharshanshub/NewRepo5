@@ -2,25 +2,26 @@
 
 @{
     ViewData["Title"] = "DrugsToBeSuppiled";
+    Layout = "_Layout2";
 }
-
-<h1>Drugs To Be Suppiled</h1>
+<div class="drg">
+<h1 style="color:cornflowerblue; font-weight:bold;">Drugs To Be Suppiled</h1>
 
 
 <table class="table h3">
     <thead>
-        <tr>
-            <th>
+        <tr class="bg-primary">
+            <th style="color:whitesmoke;">
                 @Html.DisplayNameFor(model => model.Id)
             </th>
-            <th>
+            <th style="color:whitesmoke;">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
+            <th style="color:whitesmoke;">
                 @Html.DisplayNameFor(model => model.Required_Qty)
             </th>
 
-            <th>
+            <th style="color:whitesmoke;">
                 @Html.DisplayNameFor(model => model.Price)
             </th>
 
@@ -29,7 +30,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="table-primary">
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
@@ -46,8 +47,8 @@
 
             <td>
                 <form asp-action="SupplierDrugsbtn">
-                <input type="hidden" name="Id"  value="@item.Id" hidden class="btn btn-danger" /> |
-                <button type="submit" >Supply Drugs</button>
+                <input type="hidden" name="Id"  value="@item.Id" hidden class="btn btn-primary" /> |
+                <button class=btn-primary type="submit" >Supply Drugs</button>
                 </form>
 
             </td>
@@ -57,4 +58,5 @@
 </table>
 <div>
      <a class="btn btn-outline-light" asp-controller="Supplier" asp-action="Index" asp-route-id="@ViewBag.Sid">Back</a>
+</div>
 </div>

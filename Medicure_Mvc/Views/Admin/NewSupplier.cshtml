@@ -2,14 +2,16 @@
 
 @{
     ViewData["Title"] = "NewSupplier";
+    Layout = "_Layout2";
 }
 @{
     Random r= new Random();
     int id =r.Next(100,999);
 }
-<h1>NewSupplier</h1>
+<div class="drg">
+<h1 style="color:cornflowerblue; font-weight:bold;">Create New Supplier</h1>
 
-<h4>Supplier</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -40,7 +42,7 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -2,27 +2,29 @@
 
 @{
     ViewData["Title"] = "ViewAppointmentHistorys";
+    Layout = "_Layout2";
 }
+<div class="tab">
 
-<h1>View Your Appointment History</h1>
+<h1 style = "color:cornflowerblue ;font-weight:bold;"> Appointment History</h1>
 
 
 <table class="table h4">
     <thead >
-        <tr >
-            <th>
+        <tr  class="bg-primary">
+            <th style="color:whitesmoke" >
                 @Html.DisplayNameFor(model => model.Appointment_ID)
             </th>
-            <th>
+            <th style="color:whitesmoke">
                 @Html.DisplayNameFor(model => model.Patient_Id)
             </th>
-            <th>
+            <th style="color:whitesmoke">
                 @Html.DisplayNameFor(model => model.Physician_Id)
             </th>
-            <th>
+            <th style="color:whitesmoke">
                 @Html.DisplayNameFor(model => model.illness)
-            </th>
-            <th>
+            </th style="color:whitesmoke">
+            <th style="color:whitesmoke">
                 @Html.DisplayNameFor(model => model.Date_of_visit)
             </th>
             <th></th>
@@ -30,8 +32,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+        <tr class="table-primary">
+            <td >
                 @Html.DisplayFor(modelItem => item.Appointment_ID)
             </td>
             <td>
@@ -47,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.Date_of_visit)
             </td>
             <td>
-                <a class="btn btn-outline-light btn-sm asp-controller="Patient" asp-action="GetPhysicianDetailsByID" asp-route-id="@item.Physician_Id">Get Details</a>
+                <a class="btn btn-primary btn-sm asp-controller="Patient" asp-action="GetPhysicianDetailsByID" asp-route-id="@item.Physician_Id">Get Details</a>
             </td>
 
         </tr>
@@ -55,6 +57,7 @@
  }
  </tbody>
 </table>
+</div>
 
 <div>
     <a class="btn btn-outline-light"  asp-controller="Patient" asp-action="Index" asp-route-id="@ViewBag.Id">Back</a>

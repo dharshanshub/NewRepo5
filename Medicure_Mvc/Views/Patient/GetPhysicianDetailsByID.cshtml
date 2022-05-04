@@ -2,12 +2,14 @@
 
 @{
     ViewData["Title"] = "GetPhysicianDetailsByID";
+    Layout = "_Layout2";
 }
 
-<h1>Get Physician Details</h1>
+<div class ="sep">
+<h1>Physician Details</h1>
 
 <div>
-    <h4>Physician</h4>
+  
     <hr />
     <dl class="row ">
      
@@ -32,7 +34,9 @@
     </dl>
 
 </div>
+
 <div>
     <a class="btn btn-outline-light"  asp-controller="Patient" asp-action="ViewAppointmentHistory" asp-route-id="@ViewBag.Id">Back</a>
+</div>
 </div>
 
