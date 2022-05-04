@@ -86,6 +86,8 @@ namespace Medicure_Mvc.Controllers
                 baseUri: configuration.GetConnectionString("PhysicianUri"),
                 requestUrl: $"api/Physician/GetPatientDetailsByID?id={id}"
                 );
+            var reg = "";
+            reg = model.DateOfReg;
             return View(model);
 
         }

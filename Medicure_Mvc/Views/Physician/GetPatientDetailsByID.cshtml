@@ -5,33 +5,33 @@
     Layout = "_Layout2";
 }
 
-<h1>Patient Details</h1>
 
-<div>
-    <h4>Patient</h4>
+
+<div class ="drg">
+    <h2 style="color:cornflowerblue; font-weight:bold;">Patient Detail</h2>
     <hr />
+     
     <dl class="row">
 
-        <dt class = "h3 col-xxl-4 text-xxl ">
+      <dt style="color:whitesmoke; font-weight:bold; font-size:xx-large" class = "bg-primary  ">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd class = "h1 col-xxl-4 text-xxl">
+        <dd style="color:black; font-weight:bold; font-size:xx-large" class = "table-primary ">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "h3 col-xxl-4 text-xxl">
+        
+         
+        <dt style="color:whitesmoke; font-weight:bold;font-size:xx-large" class = "bg-primary ">
             @Html.DisplayNameFor(model => model.MobileNo)
         </dt>
-        <dd class = "h1 col-xxl-4 text-xxl">
+        <dd style="color:black; font-weight:bold;font-size:xx-large" class = "table-primary ">
             @Html.DisplayFor(model => model.MobileNo)
         </dd>
-        <dt class = "h3 col-xxl-4 text-xxl">
-            @Html.DisplayNameFor(model => model.DateOfReg)
-        </dt>
-        <dd class = "h1 col-xxl-4 text-xxl">
-            @Html.DisplayFor(model => model.DateOfReg)
-        </dd>
+        </dl>
         
-    </dl>
+         
+        
+    
 </div>
 <div>
    

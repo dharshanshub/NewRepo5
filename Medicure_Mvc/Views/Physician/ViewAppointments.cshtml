@@ -44,10 +44,10 @@
                 @Html.DisplayFor(modelItem => item.Date_of_visit)
             </td>
             <td>
-               <a class="btn btn-lg btn-outline-success" asp-controller="Physician" asp-action="AddPrescription" asp-route-id=@item.Appointment_ID> Add Prescription </a>
+               <a class="btn btn-lg btn-primary" asp-controller="Physician" asp-action="AddPrescription" asp-route-id=@item.Appointment_ID> Add Prescription </a>
             </td>
             <td>
-               <a class="btn btn-lg btn-outline-warning" asp-controller="Physician" asp-action="GetPatientDetailsByID" asp-route-id=@item.Patient_Id > View Details </a>
+               <a class="btn btn-lg btn-primary" asp-controller="Physician" asp-action="GetPatientDetailsByID" asp-route-id=@item.Patient_Id > View Details </a>
             </td>
         </tr>
 }
@@ -56,6 +56,6 @@
 </div>
 
 <div>
-    <a class="btn btn-lg btn-outline-warning" asp-controller="Patient" asp-action="Index" asp-route-id="@ViewBag.Id">Back</a>
+    <a class="btn btn-lg btn-primary" asp-controller="Patient" asp-action="Index" asp-route-id="@ViewBag.Id">Back</a>
 
 </div>
