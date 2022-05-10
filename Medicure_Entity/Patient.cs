@@ -5,7 +5,9 @@ namespace Medicure_Entity
     public class Patient
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "This field must not be empty")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "This field must not be empty")]
         [DataType(DataType.PhoneNumber)]
         public string MobileNo { get; set; }
         public string DateOfReg  { get; set; }
