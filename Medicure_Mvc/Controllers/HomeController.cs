@@ -62,120 +62,127 @@ namespace Medicure_Mvc.Controllers
 
 
 
-                if (l.Type == "Patient")
+            if (l.Type == "Patient")
+            {
+                var result = new Patient();
+                using (HttpClient client = new HttpClient())
                 {
-                    var result = new Patient();
-                    using (HttpClient client = new HttpClient())
+                    client.BaseAddress = new Uri(configuration.GetConnectionString("PatientUri"));
+
+                    var response = await client.PostAsync(
+                        requestUri: "/api/Patient/PatientLogin",
+                        content: JsonContent.Create(
+                                inputValue: l,
+                                inputType: typeof(Login),
+                                mediaType: new System.Net.Http.Headers.MediaTypeHeaderValue("application/json"),
+                                options: new JsonSerializerOptions(JsonSerializerDefaults.Web)
+                        ));
+                    if (response.IsSuccessStatusCode)
                     {
-                        client.BaseAddress = new Uri(configuration.GetConnectionString("PatientUri"));
+                        result = JsonSerializer.Deserialize<Patient>(
+                            await response.Content.ReadAsStringAsync(),
+                            new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
-                        var response = await client.PostAsync(
-                            requestUri: "/api/Patient/PatientLogin",
-                            content: JsonContent.Create(
-                                    inputValue: l,
-                                    inputType: typeof(Login),
-                                    mediaType: new System.Net.Http.Headers.MediaTypeHeaderValue("application/json"),
-                                    options: new JsonSerializerOptions(JsonSerializerDefaults.Web)
-                            ));
-                        if (response.IsSuccessStatusCode)
-                        {
-                            result = JsonSerializer.Deserialize<Patient>(
-                                await response.Content.ReadAsStringAsync(),
-                                new JsonSerializerOptions(JsonSerializerDefaults.Web));
+                    }
+                    if (result.Id != 0)
+                    {
+                        return RedirectToAction(actionName: "Index", controllerName: "Patient", new { @id = result.Id });
+                    }
+                    else
+                    {
+                        ViewBag.result = "Either Password or Username is Wrong !";
 
-                        }
-                        if (result.Id != 0)
-                        {
-                            return RedirectToAction(actionName: "Index", controllerName: "Patient", new { @id = result.Id });
-                        }
-                        else
-                        {
-                            return RedirectToAction("Login");
-                        }
+                        return View();
                     }
                 }
+            }
 
-                else if (l.Type == "Physician")
+            else if (l.Type == "Physician")
+            {
+                var result = new Physician();
+                using (HttpClient client = new HttpClient())
                 {
-                    var result = new Physician();
-                    using (HttpClient client = new HttpClient())
+                    client.BaseAddress = new Uri(configuration.GetConnectionString("PhysicianUri"));
+
+                    var response = await client.PostAsync(
+                        requestUri: "/api/Physician/PhysicianLogin",
+                        content: JsonContent.Create(
+                                inputValue: l,
+                                inputType: typeof(Login),
+                                mediaType: new System.Net.Http.Headers.MediaTypeHeaderValue("application/json"),
+                                options: new JsonSerializerOptions(JsonSerializerDefaults.Web)
+                        ));
+                    if (response.IsSuccessStatusCode)
                     {
-                        client.BaseAddress = new Uri(configuration.GetConnectionString("PhysicianUri"));
+                        result = JsonSerializer.Deserialize<Physician>(
+                            await response.Content.ReadAsStringAsync(),
+                            new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
-                        var response = await client.PostAsync(
-                            requestUri: "/api/Physician/PhysicianLogin",
-                            content: JsonContent.Create(
-                                    inputValue: l,
-                                    inputType: typeof(Login),
-                                    mediaType: new System.Net.Http.Headers.MediaTypeHeaderValue("application/json"),
-                                    options: new JsonSerializerOptions(JsonSerializerDefaults.Web)
-                            ));
-                        if (response.IsSuccessStatusCode)
-                        {
-                            result = JsonSerializer.Deserialize<Physician>(
-                                await response.Content.ReadAsStringAsync(),
-                                new JsonSerializerOptions(JsonSerializerDefaults.Web));
+                    }
+                    if (result.Id != 0)
+                    {
+                        return RedirectToAction(actionName: "Index", controllerName: "Physician", new { @id = result.Id });
+                    }
+                    else
+                    {
+                        ViewBag.result = "Either Password or Username is Wrong !";
 
-                        }
-                        if (result.Id != 0)
-                        {
-                            return RedirectToAction(actionName: "Index", controllerName: "Physician", new { @id = result.Id });
-                        }
-                        else
-                        {
-                            return RedirectToAction("Login");
-                        }
+                        return View();
                     }
                 }
-                else if (l.Type == "Supplier")
+            }
+            else if (l.Type == "Supplier")
+            {
+                var result = new Supplier();
+                using (HttpClient client = new HttpClient())
                 {
-                    var result = new Supplier();
-                    using (HttpClient client = new HttpClient())
+                    client.BaseAddress = new Uri(configuration.GetConnectionString("PhysicianUri"));
+
+                    var response = await client.PostAsync(
+                        requestUri: "/api/Supplier/SupplierLogin",
+                        content: JsonContent.Create(
+                                inputValue: l,
+                                inputType: typeof(Login),
+                                mediaType: new System.Net.Http.Headers.MediaTypeHeaderValue("application/json"),
+                                options: new JsonSerializerOptions(JsonSerializerDefaults.Web)
+                        ));
+                    if (response.IsSuccessStatusCode)
                     {
-                        client.BaseAddress = new Uri(configuration.GetConnectionString("PhysicianUri"));
+                        result = JsonSerializer.Deserialize<Supplier>(
+                            await response.Content.ReadAsStringAsync(),
+                            new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
-                        var response = await client.PostAsync(
-                            requestUri: "/api/Supplier/SupplierLogin",
-                            content: JsonContent.Create(
-                                    inputValue: l,
-                                    inputType: typeof(Login),
-                                    mediaType: new System.Net.Http.Headers.MediaTypeHeaderValue("application/json"),
-                                    options: new JsonSerializerOptions(JsonSerializerDefaults.Web)
-                            ));
-                        if (response.IsSuccessStatusCode)
-                        {
-                            result = JsonSerializer.Deserialize<Supplier>(
-                                await response.Content.ReadAsStringAsync(),
-                                new JsonSerializerOptions(JsonSerializerDefaults.Web));
+                    }
+                    if (result.SupplierId != 0)
+                    {
+                        return RedirectToAction(actionName: "Index", controllerName: "Supplier", new { @id = result.SupplierId });
+                    }
+                    else
+                    {
+                        ViewBag.result = "Either Password or Username is Wrong !";
 
-                        }
-                        if (result.SupplierId != 0)
-                        {
-                            return RedirectToAction(actionName: "Index", controllerName: "Supplier", new { @id = result.SupplierId });
-                        }
-                        else
-                        {
-                            return RedirectToAction("Login");
-                        }
+                        return View();
                     }
                 }
-                    else if (l.Type == "Admin")
-                    {
+            }
+            else  
+            {
+
                 if (l.Username == "admin" && l.Password == "admin")
                 {
                     return RedirectToAction(actionName: "Index", controllerName: "Admin");
                 }
                 else
                 {
-                    return RedirectToAction("Login");
+                    ViewBag.result = "Either Password or Username is Wrong !";
+
+                    return View();
                 }
 
 
-                    }
-                else
-                {
-                    return RedirectToAction("Login");
-                }
+
+            }
+               
             }
         }
     }

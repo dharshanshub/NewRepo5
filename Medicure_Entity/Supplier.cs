@@ -11,6 +11,7 @@ namespace Medicure_Entity
 
         [DataType(DataType.Password)]
         public string Password { get; set; }
+        
 
     }
 }
