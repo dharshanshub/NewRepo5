@@ -1756,12 +1756,31 @@ section {
     font-size: 16px;
     border-color: cornflowerblue;
 }
+.btn4 {
+    background-color: whitesmoke;
+    color: cornflowerblue;
+    padding: 7px;
+    width: 80px;
+    height:40px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+   
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-color: whitesmoke;
+}
 .btn1:hover {
     background-color: royalblue;
 }
 .btn2:hover {
 
     background-color: wheat;
+}
+.btn4:hover {
+    background-color: navajowhite;
+    color:cornflowerblue;
 }
 .login1{
 
@@ -1842,17 +1861,19 @@ section {
         }
 .aboutt .video-box {
     background-image: url("../img/appointment.jpg");
-    background-size: 570px 350px;
+    background-size: 590px 320px;
+    background-repeat: no-repeat;
     border-radius: 12px;
-    width: 450px;
-    height: 350px;
+    width: 500px;
+    height: 320px;
 }
 .aboutt .video-box1 {
     background-image: url("../img/output-onlinepngtools.png");
-    background-size: 400px 350px;
+    background-size: 320px 320px;
+    padding-left:50px;
     background-repeat: no-repeat;
     border-radius: 12px;
-    width: 50px;
+    width: 400px;
     height: 330px;
 }
 .aboutt .video-box2 {
